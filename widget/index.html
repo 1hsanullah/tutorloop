@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exercise</title>
+    <style>/* build:styles */</style>
+  </head>
+  <body>
+    <main class="shell" id="shell">
+      <section class="pane pane-lesson">
+        <header class="pane-head">
+          <h1 id="title">Loading exercise…</h1>
+          <span class="badge" id="language"></span>
+        </header>
+        <div class="pane-body">
+          <div class="prose" id="lesson"></div>
+          <div class="task">
+            <h2 class="task-head">Your task</h2>
+            <div class="prose" id="task"></div>
+          </div>
+          <section class="schema" id="schema" hidden>
+            <h2 class="schema-head">Tables you can query</h2>
+            <div id="schema-body"></div>
+          </section>
+          <section class="hints" id="hints" hidden>
+            <h2 class="hints-head">Hints</h2>
+            <ol class="hint-list" id="hint-list"></ol>
+            <button class="ghost" id="hint-button" type="button">Show a hint</button>
+            <p class="hint-locked" id="hint-locked" hidden></p>
+          </section>
+          <section class="solution" id="solution-section" hidden>
+            <button class="ghost" id="solution-button" type="button">Show solution</button>
+            <pre class="code-block" id="solution-body" hidden></pre>
+          </section>
+        </div>
+      </section>
+
+      <section class="pane pane-work">
+        <div class="toolbar">
+          <button class="primary" id="run" type="button" disabled>Run</button>
+          <button class="accent" id="submit" type="button" disabled>Submit</button>
+          <span class="spacer"></span>
+          <span class="warn" id="degraded" hidden title="This host blocks background workers, so code runs on the page itself. Grading still works, but a runaway loop can only be stopped from inside the language.">reduced mode</span>
+          <span class="attempts" id="attempts">No attempts yet</span>
+          <button class="ghost small" id="reset" type="button" title="Restore the starter code">Reset</button>
+        </div>
+        <div class="editor" id="editor"></div>
+        <div class="results" id="results">
+          <p class="status" id="status"></p>
+          <div class="verdict" id="verdict" hidden>
+            <div class="verdict-head">
+              <span class="verdict-label" id="verdict-label"></span>
+              <button class="ghost small" id="copy" type="button" hidden>Copy error</button>
+            </div>
+            <div class="verdict-body" id="verdict-body"></div>
+            <div class="verdict-actions" id="verdict-actions"></div>
+          </div>
+          <div class="output" id="output" hidden>
+            <div class="output-head">Output</div>
+            <pre id="output-body"></pre>
+          </div>
+          <div class="grid-wrap" id="grid" hidden>
+            <div class="output-head" id="grid-head">Result</div>
+            <div class="grid-scroll" id="grid-body"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>/* build:script */</script>
+  </body>
+</html>
