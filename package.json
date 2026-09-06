@@ -1,0 +1,69 @@
+{
+  "name": "tutorloop",
+  "version": "0.1.0",
+  "description": "Graded coding exercises inside a chat. The assistant writes the lesson and the hidden tests, the widget runs them in the browser, and a failed attempt goes back into the conversation so the tutor explains your specific mistake. Python, JavaScript, TypeScript and SQL.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "tutorloop": "dist/server.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1hsanullah/tutorloop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/1hsanullah/tutorloop/issues"
+  },
+  "homepage": "https://github.com/1hsanullah/tutorloop#readme",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/server.js",
+    "test": "node --test",
+    "prepare": "npm run build",
+    "dev:serve": "node scripts/build.mjs && node scripts/serve.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "mcp-apps",
+    "claude",
+    "education",
+    "learning",
+    "tutor",
+    "exercise",
+    "pyodide",
+    "sqlite",
+    "typescript",
+    "codemirror"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.7.5",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@codemirror/lang-python": "^6.1.6",
+    "@codemirror/lang-sql": "^6.10.0",
+    "@codemirror/state": "^6.5.0",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.34.1",
+    "@sqlite.org/sqlite-wasm": "^3.53.4-build1",
+    "@types/node": "^20.19.27",
+    "ajv": "^8.20.0",
+    "codemirror": "^6.0.1",
+    "esbuild": "^0.25.12",
+    "ts-blank-space": "^0.9.0",
+    "typescript": "^5.9.3"
+  }
+}
