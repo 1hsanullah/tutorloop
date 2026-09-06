@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lesson widget — dev harness</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f2f3f5;
+        --panel: #fff;
+        --ink: #16181d;
+        --line: #d9dde3;
+      }
+      [data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #101216;
+        --panel: #191c22;
+        --ink: #e6e9ef;
+        --line: #2c313a;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        background: var(--bg);
+        color: var(--ink);
+        font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--line);
+        background: var(--panel);
+      }
+      header strong {
+        font-size: 13px;
+      }
+      header .note {
+        margin-left: auto;
+        opacity: 0.6;
+        font-size: 12px;
+      }
+      main {
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(280px, 1fr);
+        min-height: 0;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: var(--panel);
+      }
+      aside {
+        border-left: 1px solid var(--line);
+        background: var(--panel);
+        overflow: auto;
+        padding: 12px;
+      }
+      .entry {
+        margin-bottom: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 8px 10px;
+      }
+      .kind {
+        margin-bottom: 6px;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+      pre {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+      select,
+      button {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 5px 10px;
+        background: var(--panel);
+        color: inherit;
+        font: inherit;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>MCP Apps host (dev)</strong>
+      <select id="sample"></select>
+      <button id="theme" type="button">Dark theme</button>
+      <span class="note">Messages the widget posts into the chat appear on the right.</span>
+    </header>
+    <main>
+      <iframe id="view" title="Exercise widget"></iframe>
+      <aside id="transcript"></aside>
+    </main>
+    <script type="module" src="./harness.js"></script>
+  </body>
+</html>
