@@ -8,7 +8,8 @@
     "tutorloop": "dist/server.js"
   },
   "files": [
-    "dist",
+    "dist/server.js",
+    "dist/widget.html",
     "README.md",
     "LICENSE"
   ],
