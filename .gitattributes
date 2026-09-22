@@ -1,0 +1,7 @@
+# Normalise line endings so a Windows contributor's editor cannot turn a one-line
+# change into a whole-file diff. Text is stored LF in the repository and checked
+# out LF everywhere.
+* text=auto eol=lf
+
+# Generated, and large: keep it out of diffs and language statistics.
+package-lock.json -diff linguist-generated
