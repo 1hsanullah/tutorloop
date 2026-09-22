@@ -1,5 +1,9 @@
 # TutorLoop
 
+[![npm](https://img.shields.io/npm/v/tutorloop)](https://www.npmjs.com/package/tutorloop)
+[![CI](https://github.com/1hsanullah/tutorloop/actions/workflows/ci.yml/badge.svg)](https://github.com/1hsanullah/tutorloop/actions/workflows/ci.yml)
+[![license](https://img.shields.io/npm/l/tutorloop)](LICENSE)
+
 An MCP server that lets a chat assistant drop a **graded** coding exercise into the conversation.
 Lesson on the left, editor on the right, Run and Submit. Hidden tests decide pass/fail, and a failed
 attempt goes back into the chat with one click — so the explanation you get is about *your* code.
@@ -26,8 +30,6 @@ There is no curriculum. Every exercise is generated on demand, for whatever you 
 
 Requires Node 20+.
 
-> The npm release is pending. Until it lands, use **From source** below.
-
 **Claude Code**
 
 ```bash
@@ -50,7 +52,7 @@ claude mcp add tutorloop -- npx -y tutorloop
 Restart Claude Desktop afterwards — quit it from the tray, since closing the window isn't enough.
 
 <details>
-<summary><b>From source</b> — works today, before the npm release</summary>
+<summary><b>From source</b> — for development, or to run an unreleased change</summary>
 
 ```bash
 git clone https://github.com/1hsanullah/tutorloop.git
