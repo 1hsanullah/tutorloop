@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Both ends of the supported range. The test runner's argument handling
+        # differs between them, which has broken `npm test` before.
+        node: [20, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      # `npm ci` runs the prepare script, which builds dist/ — the server tests
+      # drive the built server over real stdio, so this has to happen first.
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
